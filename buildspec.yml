@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - bundle install
+  pre-build:
+    commands:
+     - echo Executing Pre Build Phase
+  build:
+    commands:
+     - echo Executing Pre Build Finally
+  post_build:
+    commands:
+     - echo Executing Post Build Phase
+
+    
