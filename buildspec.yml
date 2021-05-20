@@ -2,16 +2,26 @@ version: 0.2
 
 phases:
   install:
-    commands:
-      - bundle install
+    runtime-versions:
+      python: 3.8
   pre_build:
     commands:
-     - echo Executing Pre Build Phase
+      - echo Executing Pre Build Phase
+      - apt-get install -y python3-venv
+      - apt-get install -y python3-venv
+      - python3.6 -m venv test_venv
+      - . test_venv/bin/activate
+      - pip install --upgrade pip
+      - pip install .
+      - pip install -r tests/requirements.txt
+      - rm -rf dspt
+      - mkdir test-reports
   build:
     commands:
-     - echo Executing Pre Build Finally
+      - echo Executing Pre Build Finally
   post_build:
     commands:
-     - echo Executing Post Build Phase
+      - echo Executing Post Build Phase
+      - echo Build completed on `date`
 
     
