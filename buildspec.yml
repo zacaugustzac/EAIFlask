@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - bundle install
-  pre-build:
+  pre_build:
     commands:
      - echo Executing Pre Build Phase
   build:
