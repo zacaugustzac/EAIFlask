@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: final02
+  name: hzflaskwebsite
 spec:
   selector:
     matchLabels:
-      app: final02
+      app: hzflaskwebsite
   replicas: 2
   template:
     metadata:
       labels:
-        app: final02
+        app: hzflaskwebsite
     spec:
       containers:
-      - name: final02
-        image: 687639674385.dkr.ecr.ap-southeast-1.amazonaws.com/final02:latest
+      - name: hzflaskwebsite
+        image: 687639674385.dkr.ecr.ap-southeast-1.amazonaws.com/eksflask:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
