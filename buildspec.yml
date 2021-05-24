@@ -24,7 +24,7 @@ phases:
       - docker build -t eksflask .
       - docker tag eksflask:latest 687639674385.dkr.ecr.ap-southeast-1.amazonaws.com/eksflask:latest
       - docker push 687639674385.dkr.ecr.ap-southeast-1.amazonaws.com/eksflask:latest
-      - kubectl apply -f deployment.yaml
+      # - kubectl apply -f deployment.yaml
   post_build:
     commands:
       - echo Executing Post Build Phase
